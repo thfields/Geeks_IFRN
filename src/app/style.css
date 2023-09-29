@@ -2,7 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-poppins);
     scroll-behavior: smooth;
     list-style: none;
     text-decoration: none;
@@ -106,7 +106,7 @@ section{
     gap: 1rem;
     align-items: center;
     width: 100%;
-    height: 90vh;
+    height: 100vh;
     margin: 0 auto;
 }
 
@@ -121,7 +121,7 @@ section{
 .home-text h1{
     font-size: var(--big-font);
     color: var(--main-color);
-    font-family: 'Press Start 2P';
+    font-family: var(--title-font);
 
 }
 .home-text h2{
@@ -166,7 +166,13 @@ section{
 .sobre-text h2{
     font-size: var(--h2-font);
     text-shadow: 1px 1px 2px black;
-    font-family: 'Press Start 2P';
+    font-family: var(--title-font);
+}
+
+.image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .sobre-text p{
@@ -219,7 +225,7 @@ section{
 .heading-title{
     font-size: var(--h2-font);
     text-align: center;
-    font-family: 'Press Start 2P';
+    font-family: var(--title-font);
     color: var(--text-color);
     text-shadow: 1px 1px 2px black;
 }
@@ -331,7 +337,13 @@ section{
     .div-lateral { display: none; }
     .navbar a { font-size: 14px; padding: 10px;}
     .logo { display: none;}
-    .features .box-container{ grid-template-columns: 1fr 1fr;}
     header { max-width: 425px; justify-content: center; margin-left: 50px; }
     .col{ width: 100%; }
+}
+
+.box-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
