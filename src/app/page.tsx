@@ -1,113 +1,298 @@
-import Image from 'next/image'
+import Image from "next/image"
+import Link from "next/link"
+import logo from "./img/logo.png"
+import fundoHome from "./img/fundo-home.png"
+import imgSobre from "./img/img-sobre.png"
+import foto1 from "./img/1.jpg"
+import foto2 from "./img/2.jpg"
+import foto3 from "./img/3.jpg"
+import funcionario from "./img/funcionario.png"
+import funcionaria from "./img/funcionaria.png"
+
+const membros: {
+  nome: string
+  genero: "M" | "F"
+  cargo: string
+}[] = [
+  {
+    nome: "Rodrigo Siqueira",
+    genero: "M",
+    cargo: "Professor"
+  },
+  {
+    nome: "Valério Gutemberg",
+    genero: "M",
+    cargo: "Professor"
+  },
+  {
+    nome: "Jurandy Martins",
+    genero: "M",
+    cargo: "Professor"
+  },
+  {
+    nome: "Karina Oliveira",
+    genero: "F",
+    cargo: "Bolsista"
+  },
+  {
+    nome: "Abner Filipe",
+    genero: "M",
+    cargo: "Voluntário"
+  },
+  {
+    nome: "Thiago Campos",
+    genero: "M",
+    cargo: "Voluntário"
+  },
+  {
+    nome: "Maria Rita",
+    genero: "F",
+    cargo: "Voluntária"
+  },
+  {
+    nome: "Amanda Gabrielle",
+    genero: "F",
+    cargo: "Voluntária"
+  },
+  {
+    nome: "José Augusto",
+    genero: "M",
+    cargo: "Voluntário"
+  },
+  {
+    nome: "Marcos Aurélio",
+    genero: "M",
+    cargo: "Voluntário"
+  },
+  {
+    nome: "Antenor Mario",
+    genero: "M",
+    cargo: "Voluntário"
+  },
+  {
+    nome: "Vitor Daniel",
+    genero: "M",
+    cargo: "Voluntário"
+  },
+  {
+    nome: "Bruna Medina",
+    genero: "F",
+    cargo: "Voluntária"
+  }
+]
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
+    <>
+      <header>
+        <a href="#index.html" className="logo">
+          <Image src={logo} alt="" height={60} />
+        </a>
+        <ul className="navbar">
+          <li>
+            <a href="#home">Home</a>
+          </li>
+          <li>
+            <a href="#sobre">Sobre</a>
+          </li>
+          <li>
+            <a href="#colecao">Imagens</a>
+          </li>
+          <li>
+            <a href="#equipe">Equipe</a>
+          </li>
+          <li>
+            <a href="#contato">Contatos</a>
+          </li>
+        </ul>
+      </header>
+      {/*-----------Home-----------*/}
+      <div className="div-lateral">
+        <ul>
+          <h4>Edições:</h4>
+          <br />
+          <li>
+            <Link href="/edicoes/2017">2017</Link>
+          </li>
+          <li>
+            <Link href="/edicoes/2018">2018</Link>
+          </li>
+          <li>
+            <Link href="/edicoes/2019">2019</Link>
+          </li>
+          <li>
+            <Link href="/edicoes/2020">2020</Link>
+          </li>
+          <li>
+            <Link href="/edicoes/2021">2021</Link>
+          </li>
+          <li>
+            <Link href="/edicoes/2022">2022</Link>
+          </li>
+          <li>
+            <Link href="/edicoes/2023">2023</Link>
+          </li>
+        </ul>
+      </div>
+      <section className="home" id="home">
+        <div className="home-text">
+          <h1>GEEKS</h1>
+          <h2>Levando a tecnologia além!</h2>
+          <a href="#sobre" className="btn">
+            Saber Mais!
           </a>
         </div>
+        <div className="home-img">
+          <Image src={fundoHome} alt="imagem home" />
+        </div>
+      </section>
+      {/*-----------Sobre-----------*/}
+      <section className="sobre" id="sobre">
+        <div className="sobre-img">
+          <Image src={imgSobre} alt="imagem sobre" />
+        </div>
+        <div className="sobre-text">
+          <h2>Sobre Nosso Projeto!</h2>
+          <p>
+            Temos por objetivo promover a inclusão digital, permitindo que crianças
+            e adolescentes possam ter conhecimentos tecnológicos que contribuirão
+            para sua formação e mudança de perspectiva de vida.
+          </p>
+          <a href="#colecao" className="btn">
+            Ver Mais!
+          </a>
+        </div>
+      </section>
+      {/*-----------Fotos-----------*/}
+      <h1 className="heading-title" id="colecao">
+        {" "}
+        Coleção de Imagens{" "}
+      </h1>
+      <br />
+      <div className="fotos">
+        <div className="card">
+          <Image src={foto1} alt="" height={250} className="foto1" />
+        </div>
+        <div className="card">
+          <Image src={foto2} alt="" height={250} className="foto1" />
+        </div>
+        <div className="card">
+          <Image src={foto3} alt="" height={250} className="foto1" />
+        </div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      {/*-----------Equipe-----------*/}
+      <section className="features" id="equipe">
+        <h1 className="heading-title"> Equipe do Projeto </h1>
+        <div className="box-container">
+          {membros.map(membro => (
+            <div className="box-funcionario">
+              <div className="image">
+                <Image src={membro.genero === "M" ? funcionario : funcionaria} width={80} alt="" />
+              </div>
+              <div className="content">
+                <h3>{membro.nome}</h3>
+                <h2>{membro.cargo}</h2>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+      {/*-----------Contatos-----------*/}
+      <section id="contato">
+        <div className="footer">
+          <div className="main">
+            <div className="col">
+              <h4 className="link">Menu Links</h4>
+              <ul>
+                <li>
+                  <a href="#home">
+                    <i className="bx bxs-home-alt-2" /> Home
+                  </a>
+                </li>
+                <li>
+                  <a href="#sobre">
+                    <i className="bx bxs-paste" /> Sobre
+                  </a>
+                </li>
+                <li>
+                  <a href="#colecao">
+                    <i className="bx bxs-image" /> Coleção
+                  </a>
+                </li>
+                <li>
+                  <a href="#equipe">
+                    <i className="bx bxs-group" /> Equipe
+                  </a>
+                </li>
+                <li>
+                  <a href="#contato">
+                    <i className="bx bxs-contact" /> Contatos
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div className="col">
+              <h4 className="link">Processos Seletivos</h4>
+              <ul>
+                <li>
+                  <a href="https://portal.ifrn.edu.br/processos-seletivos/buscar/?tipo=grupo%3AEstude+no+IFRN">
+                    <i className="bx bxs-book" /> Estude no IFRN
+                  </a>
+                </li>
+                <li>
+                  <a href="https://portal.ifrn.edu.br/processos-seletivos/buscar/?tipo=grupo%3ABolsas+para+estudantes">
+                    <i className="bx bx-money" /> Bolsas para estudantes
+                  </a>
+                </li>
+                <li>
+                  <a href="https://portal.ifrn.edu.br/processos-seletivos/buscar/?tipo=grupo%3AServidores">
+                    <i className="bx bxs-briefcase" /> Servidores
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div className="col">
+              <h4 className="link">Cursos</h4>
+              <ul>
+                <li>
+                  <a href="https://portal.ifrn.edu.br/cursos/buscar/?categoria_modalidade=categoria%3ACursos+T%C3%A9cnicos">
+                    <i className="bx bxs-chip" /> Técnicos
+                  </a>
+                </li>
+                <li>
+                  <a href="https://portal.ifrn.edu.br/cursos/buscar/?categoria_modalidade=categoria%3ACursos+Superiores">
+                    <i className="bx bx-desktop" /> Superiores
+                  </a>
+                </li>
+                <li>
+                  <a href="https://portal.ifrn.edu.br/cursos/buscar/?categoria_modalidade=categoria%3AOutros+Cursos">
+                    <i className="bx bxs-mouse-alt" /> Outros
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div className="col">
+              <h4 className="link">Contatos</h4>
+              <ul>
+                <li>
+                  <a href="https://portal.ifrn.edu.br/campus/parnamirim/">
+                    <i className="bx bx-world" /> Campus Parnamirim
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i className="bx bxl-instagram-alt" /> geeks_ifrn
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div className="credit">
+          {" "}
+          <span>Copyright © IFRN CAMPUS PARANAMIRIM - 2023</span>{" "}
+        </div>
+      </section>
+    </>
   )
 }
