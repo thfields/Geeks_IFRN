@@ -13,6 +13,12 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      fontFamily: {
+        'press-start': ['var(--font-press)'],
+      },
+      colors: {
+        minhaCor: 'var(--bg-color)', // Use a variável CSS customizada aqui
+      },
     },
   },
   plugins: [],
